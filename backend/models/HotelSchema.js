@@ -16,24 +16,21 @@ const HotelSchema = mongoose.Schema({
         unique:true
     },
     address:{type:String,
-        required:true,
-        unique:true
+        required:true
     },
     location:{
         lat:Number,
-        lon:Number
+        lng:Number
     },
     contact:{
         type:Number,
-        required:true,
-        unique:true
+        required:true
     },
     role:{
         type:String
     },
     foodLicense:{
         type:String,
-        unique:true,
         required:true
     }
 })

@@ -5,7 +5,7 @@ const FoodRequestSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Hotel'
     },
-    assertsssign_ngoId:{
+    assign_ngoId:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Ngo'
     },
@@ -15,7 +15,7 @@ const FoodRequestSchema = mongoose.Schema({
     },
     status:{
         type:String,
-        enum:[accpect,pending]
+        enum:["accpect","pending"]
     },
     food_name:{
         type:String,
@@ -23,15 +23,14 @@ const FoodRequestSchema = mongoose.Schema({
     },
     food_quantity:{
         type:Number,
-        required:trusted
+        required:true
     },
     pickup_time:{
         type:Number,
         required:true,
     },
-    nearbyNGO:{
-        type:[Number]
-    },
+    nearbyNGO:[{ type: mongoose.Schema.Types.ObjectId, ref: "Ngo" }]
+    ,
     nearbyvolunteers:{
         type:[Number]
     }
